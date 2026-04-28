@@ -1,16 +1,76 @@
-# React + Vite
+# Project Management Login Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, pixel-perfect, fully responsive login page built with **React + Vite + Tailwind CSS**.
 
-Currently, two official plugins are available:
+![Desktop Preview](https://via.placeholder.com/800x500?text=Desktop+Split+View)
+![Mobile Preview](https://via.placeholder.com/400x700?text=Mobile+View)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Pixel-accurate UI** matching the provided design references
+- **Seamless responsiveness** — perfect desktop split view & mobile glassmorphic card
+- Password visibility toggle ("Show"/"Hide")
+- Social login buttons (Google & Facebook) with demo functionality
+- Modern glassmorphism effect on mobile
+- Clean, maintainable, and production-ready code
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Why This Project?
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project was created to deliver a **high-fidelity, production-grade login interface** that perfectly replicates the given design for both desktop and mobile views. It demonstrates modern React practices, excellent responsive design, and attention to UI/UX details.
+
+### Why This Structure?
+
+I chose this folder structure for the following reasons:
+
+| Folder              | Purpose |
+|---------------------|--------|
+| `src/components/`   | Reusable UI components (`InputField`, `SocialButtons`) |
+| `src/pages/`        | Page-level components (keeps `Login.jsx` focused) |
+| `src/styles/`       | Custom CSS files (if Tailwind is not enough) |
+| `src/App.jsx`       | Root component (keeps it minimal) |
+| `src/main.jsx`      | Entry point |
+
+**Benefits of this structure:**
+- **Scalability** — Easy to add more pages/components later
+- **Separation of Concerns** — Form logic, inputs, and layout are cleanly separated
+- **Maintainability** — Senior-level organization followed in real-world projects
+- **Reusability** — `InputField` can be used across the entire application
+
+---
+
+## 🎯 What I Did to Achieve Perfect Responsiveness
+
+- Used **mobile-first** approach with Tailwind CSS
+- Implemented `lg` breakpoint (`1024px`) for desktop split layout
+- Used `flex-col lg:flex-row` for smooth layout transformation
+- Added negative margin (`-mt-24`) on mobile for elegant glass card overlap
+- Used different hero image rendering logic for mobile and desktop
+- Ensured proper `min-h-screen`, `100vh`, and flexible layouts
+- Tested thoroughly across screen sizes for zero layout breaks
+
+---
+
+## 🛠 Tech Stack
+
+- **React 18** + **Vite**
+- **Tailwind CSS**
+- **JavaScript (ES6+)**
+- Google Fonts (Inter)
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+ ├── components/
+ │   ├── InputField.jsx          # Reusable input with show/hide password
+ │   └── SocialButtons.jsx       # Google & Facebook buttons
+ ├── pages/
+ │   └── Login.jsx               # Main login page with layout logic
+ ├── styles/
+ │   └── login.css               # Additional custom styles
+ ├── App.jsx
+ └── main.jsx
