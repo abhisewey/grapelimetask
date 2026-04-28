@@ -1,0 +1,446 @@
+/* ═══════════════════════════════════════════════════════════════
+   Login Page Styles
+   Mobile-first responsive design with lg breakpoint at 1024px
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Page Layout ─── */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+}
+
+/* ─── Mobile Hero Image ─── */
+.mobile-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.mobile-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mobile-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+/* ─── Login Form Section ─── */
+.login-form-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 20px 32px;
+  /* Negative margin to pull the form card up over the hero image */
+  margin-top: -60px;
+  z-index: 10;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 440px;
+  /* Strong glassmorphism per spec */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  padding: 36px 28px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+/* ─── Header Typography ─── */
+.login-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ─── Form Layout ─── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Forgot Password Link ─── */
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.forgot-password-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #7c3aed;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot-password-link:hover {
+  color: #6d28d9;
+  text-decoration: underline;
+}
+
+.forgot-password-link:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Sign In Button ─── */
+.signin-button {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0f172a;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.signin-button:hover {
+  background-color: #020617;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
+}
+
+.signin-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.signin-button:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* ─── Desktop Divider (hidden on mobile) ─── */
+.divider-desktop {
+  display: none;
+}
+
+/* ─── Mobile "Or sign in with" text ─── */
+.mobile-signin-with {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  margin: 4px 0 0;
+}
+
+/* ─── Social Buttons: Mobile Grid ─── */
+.social-grid-mobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.social-btn-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-btn-mobile:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.social-btn-mobile:active {
+  transform: scale(0.98);
+}
+
+.social-btn-mobile:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* ─── Social Buttons: Desktop Stack (hidden on mobile) ─── */
+.social-stack-desktop {
+  display: none;
+}
+
+.social-btn-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-btn-desktop:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.social-btn-desktop:active {
+  transform: scale(0.98);
+}
+
+.social-btn-desktop:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* ─── Sign Up Footer ─── */
+.signup-footer {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 8px 0 0;
+}
+
+.signup-link {
+  font-weight: 600;
+  color: #7c3aed;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.signup-link:hover {
+  color: #6d28d9;
+  text-decoration: underline;
+}
+
+.signup-link:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Footer Copyright ─── */
+.login-footer {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.copyright-text {
+  font-size: 11px;
+  font-weight: 500;
+  color: #9ca3af;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── Desktop Hero (hidden on mobile) ─── */
+.desktop-hero {
+  display: none;
+}
+
+.desktop-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP BREAKPOINT (≥ 1024px)
+   Split-screen layout
+   ═══════════════════════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  .login-page {
+    flex-direction: row;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  /* Hide mobile hero on desktop */
+  .mobile-hero {
+    display: none;
+  }
+
+  /* Show desktop hero */
+  .desktop-hero {
+    display: block;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Form section takes left side */
+  .login-form-section {
+    width: 50%;
+    max-width: 560px;
+    min-width: 440px;
+    margin-top: 0;
+    padding: 48px 40px;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+
+  /* Remove glassmorphism on desktop — clean white background */
+  .login-form-container {
+    max-width: 384px;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  /* Larger typography on desktop */
+  .login-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .login-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .login-header {
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .login-form {
+    gap: 18px;
+  }
+
+  .signin-button {
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 18px;
+    margin-top: 6px;
+  }
+
+  /* Show desktop divider */
+  .divider-desktop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 6px 0;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background-color: #e5e7eb;
+  }
+
+  .divider-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Hide mobile "Or sign in with" text */
+  .mobile-signin-with {
+    display: none;
+  }
+
+  /* Hide mobile social grid */
+  .social-grid-mobile {
+    display: none;
+  }
+
+  /* Show desktop social stack */
+  .social-stack-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .login-footer {
+    margin-top: 32px;
+  }
+
+  .copyright-text {
+    font-size: 12px;
+  }
+}
+
+/* ─── Accessibility: Respect reduced motion preference ─── */
+@media (prefers-reduced-motion: reduce) {
+  .signin-button,
+  .forgot-password-link,
+  .signup-link,
+  .social-btn-mobile,
+  .social-btn-desktop {
+    transition: none;
+  }
+
+  .signin-button:hover {
+    transform: none;
+  }
+}
+
+/* ─── Screen reader only utility ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
