@@ -1,13 +1,3 @@
-/**
- * SocialButtons — Google and Facebook social login buttons
- *
- * Renders two responsive variants controlled by CSS:
- * - Mobile (<1024px): 2-column grid with icon + short label ("Google" / "Facebook")
- * - Desktop (≥1024px): Full-width stacked buttons with full text ("Sign in with Google" / "Sign in with Facebook")
- *
- * Each button triggers an alert on click per requirements.
- */
-
 function SocialButtons() {
   const handleGoogleClick = () => {
     alert('Sign in with Google clicked')
@@ -118,4 +108,14 @@ function SocialButtons() {
 }
 
 export default SocialButtons
+/**
+ * SocialButtons — Google and Facebook social login buttons
+ *
+ * Renders two responsive variants controlled by CSS:
+ * - Mobile (<1024px): 2-column grid with icon + short label ("Google" / "Facebook")
+ * - Desktop (≥1024px): Full-width stacked buttons with full text ("Sign in with Google" / "Sign in with Facebook")
+ *
+ * Each button triggers an alert on click per requirements.
+ */
+
 

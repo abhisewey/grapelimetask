@@ -1,18 +1,20 @@
-/* Tailwind CSS v4 — CSS-first configuration */
+/* Tailwind v4 — CSS-first setup */
 @import "tailwindcss";
-/* @config "../tailwind.config.js"; */
 
+/* Enable your config file */
+@config "../tailwind.config.js";
+
+/* Design tokens (your custom variables) */
 :root {
-  /* Font family */
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
-  /* Custom violet shades for the design */
+  /* Violet shades */
   --color-violet-500: #8b5cf6;
   --color-violet-600: #7c3aed;
   --color-violet-700: #6d28d9;
 
-  /* Custom gray palette */
+  /* Gray palette */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -25,7 +27,7 @@
   --color-gray-900: #111827;
 }
 
-/* Global resets and base styles */
+/* Base styles */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -40,8 +42,8 @@ body {
   background-color: #ffffff;
 }
 
-/* Remove default focus outlines — we'll use custom ones */
-*:focus {
-  outline: none;
+/* ✅ FIXED: Accessible focus (don’t kill outlines) */
+*:focus-visible {
+  outline: 2px solid var(--color-violet-600);
+  outline-offset: 2px;
 }
-

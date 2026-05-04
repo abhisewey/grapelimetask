@@ -1,29 +1,17 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-/**
- * InputField — Reusable form input component
- *
- * Props:
- * - id: string — input id and label htmlFor
- * - type: string — input type (email, password, text)
- * - label: string — accessible label text
- * - placeholder: string — input placeholder
- * - value: string — controlled value
- * - onChange: fn — change handler
- * - required?: boolean — HTML5 required attribute
- */
 function InputField({
   id,
-  type = 'text',
+  type = "text",
   label,
   placeholder,
   value,
   onChange,
   required = false,
 }) {
-  const [showPassword, setShowPassword] = useState(false)
-  const isPassword = type === 'password'
-  const inputType = isPassword && showPassword ? 'text' : type
+  const [showPassword, setShowPassword] = useState(false);
+  const isPassword = type === "password";
+  const inputType = isPassword && showPassword ? "text" : type;
 
   return (
     <div className="flex flex-col gap-1.5">
@@ -55,15 +43,27 @@ function InputField({
             onClick={() => setShowPassword((s) => !s)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-violet-600 transition-colors hover:text-violet-700 focus:text-violet-700"
             tabIndex={-1}
-            aria-label={showPassword ? 'Hide password' : 'Show password'}
+            aria-label={showPassword ? "Hide password" : "Show password"}
           >
-            {showPassword ? 'Hide' : 'Show'}
+            {showPassword ? "Hide" : "Show"}
           </button>
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default InputField
+export default InputField;
 
+/**
+ * InputField — Reusable form input component
+ *
+ * Props:
+ * - id: string — input id and label htmlFor
+ * - type: string — input type (email, password, text)
+ * - label: string — accessible label text
+ * - placeholder: string — input placeholder
+ * - value: string — controlled value
+ * - onChange: fn — change handler
+ * - required?: boolean — HTML5 required attribute
+ */

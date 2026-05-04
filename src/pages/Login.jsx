@@ -1,24 +1,17 @@
-import { useState } from 'react'
-import InputField from '../components/InputField.jsx'
-import SocialButtons from '../components/SocialButtons.jsx'
-import '../styles/login.css'
+import { useState } from "react";
+import InputField from "../components/InputField.jsx";
+import SocialButtons from "../components/SocialButtons.jsx";
+import "../styles/login.css";
 
-/**
- * Login Page
- *
- * Responsive split-screen login page:
- * - Desktop (≥1024px): Left form + Right hero image (full height)
- * - Mobile (<1024px): Hero image on top + Glassmorphic form card below
- */
 function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Form submission logic would go here
-    console.log('Sign in submitted:', { email, password })
-  }
+    console.log("Sign in submitted:", { email, password });
+  };
 
   return (
     <main className="login-page">
@@ -54,7 +47,7 @@ function Login() {
             <InputField
               id="email"
               type="email"
-              label="Email address"
+              label="Email"
               placeholder="Example@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -75,11 +68,11 @@ function Login() {
             {/* Forgot Password Link */}
             <div className="forgot-password-wrapper">
               <a
-                href="#forgot"
+                href="_blank"
                 className="forgot-password-link"
                 onClick={(e) => {
-                  e.preventDefault()
-                  alert('Forgot Password clicked')
+                  e.preventDefault();
+                  alert("Forgot Password clicked");
                 }}
               >
                 Forgot Password?
@@ -108,13 +101,13 @@ function Login() {
 
             {/* Sign Up Footer */}
             <p className="signup-footer">
-              Don't you have an account?{' '}
+              Don't you have an account?{" "}
               <a
                 href="#signup"
                 className="signup-link"
                 onClick={(e) => {
-                  e.preventDefault()
-                  alert('Sign up clicked')
+                  e.preventDefault();
+                  alert("Sign up clicked");
                 }}
               >
                 Sign up
@@ -139,8 +132,15 @@ function Login() {
         />
       </div>
     </main>
-  )
+  );
 }
 
-export default Login
+export default Login;
 
+/**
+ * Login Page
+ *
+ * Responsive split-screen login page:
+ * - Desktop (≥1024px): Left form + Right hero image (full height)
+ * - Mobile (<1024px): Hero image on top + Glassmorphic form card below
+ */
